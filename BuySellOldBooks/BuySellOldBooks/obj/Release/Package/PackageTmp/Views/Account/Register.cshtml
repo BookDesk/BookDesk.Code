@@ -1,0 +1,66 @@
+﻿@model BuySellOldBooks.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_newLayout.cshtml";
+}
+
+<table width="60%" align="center">
+<tr>
+    <td >
+        <table width="60%" cellpadding="5" cellspacing="0" align="center">
+            @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+          <tr>
+              <td colspan="2" align="center"><h2>Create a new account.</h2></td>
+          </tr>
+           <tr>
+                <td align="left" width="40%" class="text4">@Html.LabelFor(m => m.UserName):&nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                <td align="left" width="60%" >@Html.TextBoxFor(m => m.UserName, null, new { @class="text_field_other" })
+                    @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "validationMsgTextStyle" })
+                </td>
+            </tr>
+            <tr>
+                <td align="left" class="text4">@Html.LabelFor(m => m.Password):&nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                <td align="left"> @Html.PasswordFor(m => m.Password, new { @class="text_field_other" })
+                    @Html.ValidationMessageFor(m => m.Password, null, new { @class = "validationMsgTextStyle" })
+                </td>
+            </tr>
+            <tr>
+                <td align="left" class="text4">@Html.LabelFor(m => m.ConfirmPassword):</td>
+                <td align="left">@Html.PasswordFor(m => m.ConfirmPassword, new { @class="text_field_other" })
+                </td>
+            </tr>
+             <tr>
+                 <td align="left" class="text4">@Html.LabelFor(m => m.Email):&nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                 <td align="left">@Html.TextBoxFor(m => m.Email, null, new { @class="text_field_other" })
+                     @Html.ValidationMessageFor(m => m.Email, null, new { @class = "validationMsgTextStyle" })
+                 </td>
+             </tr>
+             <tr>
+                 <td align="left" class="text4">@Html.LabelFor(m => m.Phone):</td>
+                 <td align="left">@Html.TextBoxFor(m => m.Phone, null, new { @class="text_field_other" })
+                     @Html.ValidationMessageFor(m => m.Phone, null, new { @class = "validationMsgTextStyle" })
+                 </td>
+             </tr>
+             <tr>
+                 <td align="left" class="text4">@Html.LabelFor(m => m.NickName):&nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                 <td align="left">@Html.TextBoxFor(m => m.NickName, null, new { @class="text_field_other" })
+                     @Html.ValidationMessageFor(m => m.NickName, null, new { @class = "validationMsgTextStyle" })
+                 </td>
+             </tr>
+             
+              <tr>
+                  <td align="left" class="text4">@Html.LabelFor(m => m.Institution):</td>
+                  <td align="left">@Html.TextBoxFor(m => m.Institution, null, new { @class="text_field_other" })
+                  </td>
+              </tr>
+            <tr>
+                <td></td>
+                <td align="left"><input type="submit" value="Register" class="button1"/></td>
+            </tr>
+}
+        </table>
+    </td>
+</tr>
+</table>

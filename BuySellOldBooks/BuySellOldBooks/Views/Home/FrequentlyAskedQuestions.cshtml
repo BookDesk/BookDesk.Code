@@ -1,0 +1,141 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - BookDesk.in</title>
+    <link href="~/Content/CustomStylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="body">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center">
+                <table width="73%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="29%" height="85" valign="bottom" align="left" style="padding-bottom: 5px;">
+                                        <a style="text-decoration:none", href="@Url.Action("SearchBooks","Book")"><img src="~/images/logo.png" width="256" height="64" style="border:none"/></a></td>
+                                    <td width="71%" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="73%" align="right" valign="top">@Html.Partial("_LoginPartial")</td>
+                                                <td width="27%" align="right">
+                                                    <a href="@Url.Action("SearchBooks", "Book", new { SpecialStatus="1"})"><img src="~/images/top.png" width="162" height="76" style="border:none" /></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="heading4" align="left">Frequently Asked Questions</td>
+                                    <td colspan="2" valign="top">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" valign="top" align="center">
+                                        <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td bgcolor="#ffffff" align="center">
+                                                    <table width="98%" border="0" cellspacing="5" cellpadding="5">
+                                                        <tr>
+                                                            <td align="left">
+                                                                <h2>For Buyers:</h2>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text5" align="left">1. Why should I buy books from BookDesk.in?</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">We provide a host of benefits to the buyers which include a large number of books of different categories and from different streams where a buyer can directly contact to the seller and make a best deal for them.</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text5" align="left">2. Do I need to register before I can start buying books?</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left"><b>No.</b> You do not need to register before buying books from BookDesk.in.</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text5" align="left">3. How will I assess the condition/quality of the books?</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td class="text4" align="left">We always make an appeal to book seller to sell the book(s) that must be in at least good condition, But as you know, this is an online platform where buyer and seller can contact directly, so you can make sure when talk to a seller that their book(s) is in at least in an okay condition.</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text5" align="left">4. How do I make payment for a book?</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">You can explore books here on BookDesk.in if you want to buy book, just contact to book seller and decide how they can get the payment from you and how can you get book from seller.</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text5" align="left">5. Are my personal details safe and secure with BookDesk.in?</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left"><b>Yes.</b> Your personal details are absolutely safe and secure with BookDesk.in. We realize the importance of personal data submitted to our website and strive hard to maintain the privacy, security and integrity of your personal information on our systems. We do not disclose your personal information to third parties unless required by law.</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td align="left"><h2>For Sellers:</h2> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">1. Why should I sell books through BookDesk.in?</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">We provide a hassle-free platform to sell your old books, We provide you with large number of customers who are willing to purchase your old books at reasonable prices, you know that if you wait to sell textbooks until next semester then they may be worthless.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">2. Do I need to register before I can start selling?</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left"><b>Yes.</b> You need to register with BookDesk.in in order to authenticate yourself and Start selling!</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">3. Do I need to pay for registering with BookDesk.in?</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left"><b>No.</b> You can create an BookDesk.in account for FREE and Start selling your books today!</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">4. Is there a limit to the number of books I can sell?</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left"><b>No.</b> You may sell as many books as you like.</td>
+                                                        </tr>
+                                                        <tr><td></td></tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="heading2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">@Html.Partial("_Footer")</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+        </body>
+</html>

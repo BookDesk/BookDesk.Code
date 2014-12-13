@@ -1,0 +1,130 @@
+﻿@model PagedList.IPagedList<BuySellOldBooks.Models.Book>
+@using PagedList.Mvc;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - Buy Sell Old Books</title>
+    <link href="~/Content/CustomStylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="body" style="background-image:url(Images/bg.jpg)">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center">
+                <table width="73%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="29%" height="85" valign="bottom" align="left" style="padding-bottom:5px;">
+                                        @*<img src="images/logo.png" width="256" height="64" />*@
+                                        <a href="@Url.Action("SearchBooks","Book")"><img src="~/images/logo.png" width="256" height="64" style="border:none" /></a>
+                                    </td>
+                                    <td width="71%" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="73%" align="right" valign="top">@Html.Partial("_LoginPartial")</td>
+                                                <td width="27%" align="right"><a href="@Url.Action("SearchBooks", "Book", new { SpecialStatus="1"})"><img src="images/top.png" width="162" height="76" style="border:none" /></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="heading1" align="left" width="22%">Categories</td>
+                                    <td colspan="2" valign="top" width="78%">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td class="heading3" height="15" align="left">
+
+                                                    @using (Html.BeginForm("SearchBooks", "Book", FormMethod.Get))
+                                                    {
+                                                        if (!(ViewData["bookCity"] == null))
+                                                        {
+                                                            if (ViewBag.CurrentFilter == null) { ViewBag.CurrentFilter = "Enter Book Title or Author to Search"; }
+                                                            <p style="margin:0px;padding:0px;">
+                                                                @Html.TextBox("SearchKeyword", ViewBag.CurrentFilter as string, null, new { @class = "text_field", title = "Enter Book Title or Author to Search", onmousemove = "if( value=='') value = 'Enter Book Title or Author to Search'", onblur = "if( value=='') value = 'Enter Book Title or Author to Search'", onfocus = "if(value=='Enter Book Title or Author to Search') value = ''" })
+                                                                @Html.DropDownList("Cities", ViewData["bookCity"] as SelectList, "Select City", new { @class = "select_field", title = "Select City to look for the books avilable in a perticular city" })
+                                                                @Html.DropDownList("SortKey", ViewData["sortingItem"] as SelectList, "Latest Books", new { @class = "select_field", title = "Select to sort book listing in a perticular order" })
+                                                                <input type="submit" value="Filter" class="filterButton" />
+                                                            </p>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="78%" valign="top" colspan="2">
+                                        <table width="99%" height="1650px;" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
+                                            <tr>
+                                                <td width="22%" valign="top" align="left" class="right_border">
+                                                    <table width="96%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td align="left">
+                                                                @using (Html.BeginForm("SearchBooks", "Book", FormMethod.Get))
+                                                                {
+                                                                    List<string> catList = (List<string>)ViewData["categoriesList"];
+                                                                    if (catList != null)
+                                                                    {
+                                                                        foreach (var catg in catList)
+                                                                        {
+                                                                            <ul class="list">
+                                                                                <li><img src="images/bullet.png" width="8" height="8" vspace="3" /><a href="?Categories=@catg">@catg</a></li>
+                                                                            </ul>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td width="58%" align="center" valign="top" class="right_border">
+
+                                                    @RenderBody()
+
+                                                </td>
+                                                <td width="20%" height="100%" valign="top" align="left">
+                                                    <table width="96%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+                                                        <tr>
+                                                            <td><img src="images/ad.jpg" width="190" height="662" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="heading2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td align="center">@Html.Partial("_Footer")</td>
+                    </tr>
+                    <tr>
+                        <td align="right">&nbsp;</td>
+                    </tr>
+                </table>
+</body>
+</html>

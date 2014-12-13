@@ -1,0 +1,237 @@
+﻿@model List<BuySellOldBooks.Models.Book>
+
+@{
+    ViewBag.Title = "Add Book(s) to Sell";
+    Layout = null;
+} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - BookDesk</title>
+    <link href="~/Content/CustomStylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+   
+<body id="body">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center"><table width="73%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="29%" height="85" valign="bottom" align="left" style="padding-bottom:5px;"><a href="@Url.Action("SearchBooks","Book")"><img src="~/images/logo.png" width="256" height="64" style="border:none"/></a></td>
+            <td width="71%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                  <td width="73%" align="right" valign="top">@Html.Partial("_LoginPartial")</td>
+                <td width="27%" align="right"><a href="@Url.Action("SearchBooks", "Book", new { SpecialStatus="1"})"><img src="~/images/top.png" width="162" height="76" style="border:none" /></a></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr valign="top">
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="heading4" align="left">Add Book</td>
+            <td colspan="2" valign="top">&nbsp;</td>
+            </tr>
+          <tr>
+            
+            <td width="100%" valign="top"  align="center">
+                <table width="99%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="right" valign="top" bgcolor="#ffffff">
+                   
+          
+@using (Html.BeginForm("AddBooks", "Book", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    @Html.ValidationSummary(true) 
+    @Html.AntiForgeryToken()            //AntiForgeryToken is used for token varification to prevent from a Sequrity Threat- CSRF (Cross Site Request Forgery)
+    <div>
+    <div>     
+       @if (Model == null) {
+            <table width="98%" cellspacing="0" cellpadding="5">
+            <tr class="text4">
+               <th align="left">S.No.</th>
+               <th align="left">Title</th>
+               <th align="left">Publisher</th>
+               <th align="left">Author</th>
+               <th align="left">Edition</th>
+               <th align="left">Category</th>
+                <th align="left">Year</th>
+               <th align="left">Price</th>
+                <th align="left" style="font-size:smaller">Books Image</th>
+           </tr>
+            <tr>
+                @*, new { style = "width:400px" }*@
+                <td align="left">1</td>
+                <td align="left">@Html.TextBoxFor(model => model[0].Title, new { style = "width:300px" }) &nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                <td align="left">@Html.TextBoxFor(model => model[0].Publisher, new { style = "width:175px" }) &nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                <td align="left">@Html.TextBoxFor(model => model[0].Author, new { style = "width:175px" }) &nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                <td align="left">@Html.DropDownListFor(model=>model[0].Edition, ViewData["editionList"] as SelectList,"Select") &nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                <td align="left">@Html.DropDownListFor(model=>model[0].Category, ViewData["bookCategory"] as SelectList,"Select") &nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                <td align="left">@Html.TextBoxFor(model => model[0].Year, new { style = "width:50px" }) &nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                <td align="left">@Html.TextBoxFor(model => model[0].Price, new { style = "width:50px" }) &nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b></label></td>
+                <td><input type="file" style="width:75px" name="file" title="Upload Book Image" /></td>
+            </tr>
+            <tr>
+                <td align="left">2</td>
+                <td align="left">@Html.TextBoxFor(model => model[1].Title, new { style = "width:300px" })</td>
+                <td align="left">@Html.TextBoxFor(model => model[1].Publisher, new { style = "width:175px"})</td>
+                <td align="left">@Html.TextBoxFor(model => model[1].Author, new { style = "width:175px"})</td>
+                <td align="left">@Html.DropDownListFor(model=>model[1].Edition, ViewData["editionList"] as SelectList,"Select")</td>
+                <td align="left">@Html.DropDownListFor(model=>model[1].Category, ViewData["bookCategory"] as SelectList,"Select")</td>
+                <td align="left">@Html.TextBoxFor(model => model[1].Year, new { style = "width:50px" })</td>
+                <td align="left">@Html.TextBoxFor(model => model[1].Price, new { style = "width:50px" })</td>
+                <td><input type="file" style="width:75px" name="file2" title="Upload Book Image" /></td>
+            </tr>
+            <tr>
+                <td align="left">3</td>
+                <td align="left">@Html.TextBoxFor(model => model[2].Title, new { style = "width:300px" })</td>
+                <td align="left">@Html.TextBoxFor(model => model[2].Publisher, new { style = "width:175px"})</td>
+                <td align="left">@Html.TextBoxFor(model => model[2].Author, new { style = "width:175px"})</td>
+                <td align="left">@Html.DropDownListFor(model=>model[2].Edition, ViewData["editionList"] as SelectList,"Select")</td>
+                <td align="left">@Html.DropDownListFor(model=>model[2].Category, ViewData["bookCategory"] as SelectList,"Select")</td>
+                <td align="left">@Html.TextBoxFor(model => model[2].Year, new { style = "width:50px" })</td>
+                <td align="left">@Html.TextBoxFor(model => model[2].Price, new { style = "width:50px" })</td>
+                <td><input type="file" style="width:75px" name="file3" title="Upload Book Image" /></td>
+            </tr>
+            <tr>
+                <td align="left">4</td>
+                <td align="left">@Html.TextBoxFor(model => model[3].Title, new { style = "width:300px" })</td>
+                <td align="left">@Html.TextBoxFor(model => model[3].Publisher, new { style = "width:175px"})</td>
+                <td align="left">@Html.TextBoxFor(model => model[3].Author, new { style = "width:175px"})</td>
+                <td align="left">@Html.DropDownListFor(model=>model[3].Edition, ViewData["editionList"] as SelectList,"Select")</td>
+                <td align="left">@Html.DropDownListFor(model=>model[3].Category, ViewData["bookCategory"] as SelectList,"Select")</td>
+                <td align="left">@Html.TextBoxFor(model => model[3].Year, new { style = "width:50px" })</td>
+                <td align="left">@Html.TextBoxFor(model => model[3].Price, new { style = "width:50px" })</td>
+                <td><input type="file" style="width:75px" name="file4" title="Upload Book Image" /></td>
+            </tr>
+                <tr>
+                <td align="left">5</td>
+                <td align="left">@Html.TextBoxFor(model => model[4].Title, new { style = "width:300px" })</td>
+                    <td align="left">@Html.TextBoxFor(model => model[4].Publisher, new { style = "width:175px"})</td>
+                <td align="left">@Html.TextBoxFor(model => model[4].Author, new { style = "width:175px"})</td>
+                <td align="left">@Html.DropDownListFor(model=>model[4].Edition, ViewData["editionList"] as SelectList,"Select")</td>
+                <td align="left">@Html.DropDownListFor(model=>model[4].Category, ViewData["bookCategory"] as SelectList,"Select")</td>
+                <td align="left">@Html.TextBoxFor(model => model[4].Year, new { style = "width:50px" })</td>
+                    <td align="left">@Html.TextBoxFor(model => model[4].Price, new { style = "width:50px" })</td>
+                    <td><input type="file" style="width:75px" name="file5" title="Upload Book Image" /></td>
+                </tr>
+                <tr>
+                <td align="left">6</td>
+                <td align="left">@Html.TextBoxFor(model => model[5].Title, new { style = "width:300px" })</td>
+                    <td align="left">@Html.TextBoxFor(model => model[5].Publisher, new { style = "width:175px"})</td>
+                <td align="left">@Html.TextBoxFor(model => model[5].Author, new { style = "width:175px"})</td>
+                <td align="left">@Html.DropDownListFor(model=>model[5].Edition, ViewData["editionList"] as SelectList,"Select")</td>
+                <td align="left">@Html.DropDownListFor(model=>model[5].Category, ViewData["bookCategory"] as SelectList,"Select")</td>
+                <td align="left">@Html.TextBoxFor(model => model[5].Year, new { style = "width:50px" })</td>
+                    <td align="left">@Html.TextBoxFor(model => model[5].Price, new { style = "width:50px" })</td>
+                    <td><input type="file" style="width:75px" name="file6" title="Upload Book Image" /></td>
+                </tr>
+                <tr>
+                <td align="left">7</td>
+                <td align="left">@Html.TextBoxFor(model => model[6].Title, new { style = "width:300px" })</td>
+                    <td align="left">@Html.TextBoxFor(model => model[6].Publisher, new { style = "width:175px"})</td>
+                <td align="left">@Html.TextBoxFor(model => model[6].Author, new { style = "width:175px" })</td>
+                <td align="left">@Html.DropDownListFor(model=>model[6].Edition, ViewData["editionList"] as SelectList,"Select")</td>
+                <td  align="left">@Html.DropDownListFor(model=>model[6].Category, ViewData["bookCategory"] as SelectList,"Select")</td>
+                <td align="left">@Html.TextBoxFor(model => model[6].Year, new { style = "width:50px" })</td>
+                    <td  align="left">@Html.TextBoxFor(model => model[6].Price, new { style = "width:50px" })</td>
+                    <td><input type="file" style="width:75px" name="file7" title="Upload Book Image" /></td>
+                </tr>
+                <tr>
+                <td  align="left">8</td>
+                <td  align="left">@Html.TextBoxFor(model => model[7].Title, new { style = "width:300px" })</td>
+                    <td align="left">@Html.TextBoxFor(model => model[7].Publisher, new { style = "width:175px" })</td>
+                <td  align="left">@Html.TextBoxFor(model => model[7].Author, new { style = "width:175px" })</td>
+                <td  align="left">@Html.DropDownListFor(model=>model[7].Edition, ViewData["editionList"] as SelectList,"Select")</td>
+                <td  align="left">@Html.DropDownListFor(model=>model[7].Category, ViewData["bookCategory"] as SelectList,"Select")</td>
+                <td align="left">@Html.TextBoxFor(model => model[7].Year, new { style = "width:50px" })</td>
+                    <td  align="left">@Html.TextBoxFor(model => model[7].Price, new { style = "width:50px" })</td>
+                    <td><input type="file" style="width:75px" name="file8" title="Upload Book Image" /></td>
+                </tr>
+                <tr>
+                <td  align="left">9</td>
+                <td  align="left">@Html.TextBoxFor(model => model[8].Title, new { style = "width:300px" })</td>
+                    <td align="left">@Html.TextBoxFor(model => model[8].Publisher, new { style = "width:175px" })</td>
+                <td  align="left">@Html.TextBoxFor(model => model[8].Author, new { style = "width:175px" })</td>
+                <td  align="left">@Html.DropDownListFor(model=>model[8].Edition, ViewData["editionList"] as SelectList,"Select")</td>
+                <td  align="left">@Html.DropDownListFor(model=>model[8].Category, ViewData["bookCategory"] as SelectList,"Select")</td>
+                <td align="left">@Html.TextBoxFor(model => model[8].Year, new { style = "width:50px" })</td>
+                    <td  align="left">@Html.TextBoxFor(model => model[8].Price, new { style = "width:50px" })</td>
+                    <td><input type="file" style="width:75px" name="file9" title="Upload Book Image" /></td>
+                </tr>
+                <tr>
+                <td  align="left">10</td>
+                <td  align="left">@Html.TextBoxFor(model => model[9].Title, new { style = "width:300px" })</td>
+                    <td align="left">@Html.TextBoxFor(model => model[9].Publisher, new { style = "width:175px" })</td>
+                <td  align="left">@Html.TextBoxFor(model => model[9].Author, new { style = "width:175px" })</td>
+                <td  align="left">@Html.DropDownListFor(model=>model[9].Edition, ViewData["editionList"] as SelectList,"Select")</td>
+                <td  align="left">@Html.DropDownListFor(model=>model[9].Category, ViewData["bookCategory"] as SelectList,"Select")</td>
+                <td align="left">@Html.TextBoxFor(model => model[9].Year, new { style = "width:50px" })</td>
+                    <td  align="left">@Html.TextBoxFor(model => model[9].Price, new { style = "width:50px" })</td>
+                    <td><input type="file" style="width:75px" name="file10" title="Upload Book Image" /></td>
+                </tr>  
+                <tr>
+                    <td colspan="6" align="left">
+                        <table width="100%" cellspacing="0" cellpadding="5">
+                         <tr>
+                             <td align="left" width="25%" class="text4">Location of book(s) (City)</td>
+                             <td align="left" width="75%">@Html.DropDownList("Cities", ViewData["bookCity"] as SelectList, "---Select City---", new { @class = "select_field", style = "width:256px" }) &nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b> Required</label></td>
+                             </tr>
+                         <tr>
+                             <td align="left" class="text4">Location of book(s) (Locality)</td>
+                             <td align="left">@Html.TextBoxFor(model => model[0].Locality, new { style = "width:250px" })  &nbsp; <label style="color:#C71F21;text-align:left;"><b>*</b> Required</label></td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="text4">Name of your Institution</td>
+                            <td align="left">@Html.TextBox("Institution", null, new { style = "width:250px" })</td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="text4" colspan="2"><div id='output'></div></td>
+                        </tr>
+                        <tr>                          
+                            <td align="center" colspan="2">
+                                <input type="submit" value="Add Books" style="background-color:#1c2641;color:#ffffff; border:none; padding:4px 15px;font-family:Arial, Helvetica, sans-serif; font-size:11px;text-decoration:none;cursor:pointer;"/>
+                                @Html.ActionLink("Cancel", "SearchBooks", null, new { @style = "background-color:#1c2641;color:#ffffff; border:none; padding:4px 15px;font-family:Arial, Helvetica, sans-serif; font-size:11px;text-decoration:none;cursor:pointer;"})
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                     </table>
+                    </td>
+                </tr> 
+        </table>        
+        } else {    
+       }    
+    </div>
+   
+    </div>
+
+}
+</td>
+              </tr>
+            </table></td>
+            
+            </tr>
+     
+    </table></td>
+  </tr>
+  <tr>
+  	<td class="heading2">&nbsp;</td>
+  </tr>
+   <tr>
+    <td align="center" >@Html.Partial("_Footer")</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+    </table>
+
+</body>
+</html>
+
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<BuySellOldBooks.Models.Book>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - Buy Sell Old Books</title>
+    <link href="~/Content/CustomStylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="body">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center">
+                <table width="73%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="29%" height="85" valign="bottom" align="left" style="padding-bottom: 5px;">
+                                        <a href="@Url.Action("SearchBooks","Book")"><img src="~/images/logo.png" width="256" height="64" style="border:none"/></a></td>
+                                    <td width="71%" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="73%" align="right" valign="top">@Html.Partial("_LoginPartial")</td>
+                                                <td width="27%" align="right">
+                                                    <a href="@Url.Action("SearchBooks", "Book", new { SpecialStatus="1"})"><img src="~/images/top.png" width="162" height="76" style="border:none" /></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="heading4" align="left">My Account</td>
+                                    <td colspan="2" valign="top">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" valign="top" align="center">
+                                        <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="right" valign="top" bgcolor="#ffffff">
+                                                    <div style="float: left; width: 100%">
+                                                        @foreach (var item in Model)
+                                                        {
+  
+                                                            <table width="98%" cellpadding="5" cellspacing="0">
+                                                                <tr>
+                                                                    <td align="left" colspan="5">
+                                                                        <table width="100%" cellpadding="5" cellspacing="0">
+                                                                            <tr>
+                                                                                <td align="left" class="text1" width="80%">@Html.DisplayFor(modelItem => item.Title)</td>
+                                                                                <td class="price" width="20%" valign="top">For Sale:  @Html.DisplayFor(modelItem => item.Price) </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left" class="text3" width="15%">Author:</td>
+                                                                    <td align="left" class="text2" width="40%">@Html.DisplayFor(modelItem => item.Author)</td>
+                                                                    <td align="left" class="text3" width="10%">Edition:</td>
+                                                                    <td align="left" class="text2" width="35%">@Html.DisplayFor(modelItem => item.Edition)</td>
+                                                               </tr>
+                                                                <tr>
+                                                                    <td align="left" class="text3" width="15%">Publisher:</td>
+                                                                    <td align="left" class="text2" width="40%">@Html.DisplayFor(modelItem => item.Publisher)</td>
+                                                                    <td align="left" class="text3" width="10%">Year:</td>
+                                                                    <td align="left" class="text2" width="35%">@Html.DisplayFor(modelItem => item.Year)</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left" class="text3">Location of Book:</td>
+                                                                    <td align="left" class="text2">@Html.DisplayFor(modelItem => item.Locality), @Html.DisplayFor(modelItem => item.City)</td>
+                                                                </tr>
+                                                        <tr>
+
+                                                        <td align="right" class="text3" colspan="4" style="border-bottom: 1px solid #cccccc;">@Html.ActionLink("Edit", "Edit", "Book", new { id = item.BookID }, new { @style = "background-color:#1c2641;color:#ffffff; border:none; padding:4px 15px;font-family:Arial, Helvetica, sans-serif; font-size:11px;text-decoration:none;cursor:pointer;" }) &nbsp;&nbsp; @Html.ActionLink("Delete", "Delete", "Book", new { id = item.BookID }, new { @style = "background-color:#1c2641;color:#ffffff; border:none; padding:4px 15px;font-family:Arial, Helvetica, sans-serif; font-size:11px;text-decoration:none;cursor:pointer;" })</td>
+                                                        </tr>
+                                                            </table>
+                                                        }
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="heading2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">@Html.Partial("_Footer")</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+        </body>
+</html>

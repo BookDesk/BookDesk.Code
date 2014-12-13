@@ -1,0 +1,187 @@
+﻿@model BuySellOldBooks.Models.Book
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - BookDesk</title>
+    <link href="~/Content/CustomStylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="body">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center">
+                <table width="73%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="29%" height="85" valign="bottom" align="left" style="padding-bottom:5px;"><a href="@Url.Action("SearchBooks","Book")"><img src="~/images/logo.png" width="256" height="64" style="border:none" /></a></td>
+                                    <td width="71%" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="73%" align="right" valign="top">@Html.Partial("_LoginPartial")</td>
+                                                <td width="27%" align="right"><a href="@Url.Action("SearchBooks", "Book", new { SpecialStatus="1"})"><img src="~/images/top.png" width="162" height="76" style="border:none" /></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="heading4" align="left">Edit</td>
+                                    <td colspan="2" valign="top">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" valign="top" align="center">
+                                        <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td bgcolor="#ffffff">
+
+                                                    <table align="center" valign="top" width="70%">
+                                                        <tr>
+                                                            <td align="center" valign="top">
+
+                                                                <table width="45%" cellpadding="5" cellspacing="0">
+                                                                    @using (Html.BeginForm())
+                                                                    {
+                                                                        @Html.AntiForgeryToken()                //AntiForgeryToken is used for token varification to prevent from a Sequrity Threat- CSRF (Cross Site Request Forgery)
+                                            @Html.ValidationSummary(true)
+                                                                        HtmlHelper.ClientValidationEnabled = true;
+                                                                        <tr>
+                                                                            <td align="left" colspan="2">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            @Html.HiddenFor(model => model.BookID)
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            @Html.HiddenFor(model => model.UserId)
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            @Html.HiddenFor(model => model.IsActive)
+
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <td align="left" class="text4">@Html.LabelFor(model => model.Title)</td>
+                                                                            <td align="left" style="width:400px">
+                                                                                @Html.TextBoxFor(model => model.Title, new { style = "width:400px" })
+                                                                                @Html.ValidationMessageFor(model => model.Title)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left" class="text4">@Html.LabelFor(model => model.Publisher)</td>
+                                                                            <td align="left">
+                                                                                @Html.TextBoxFor(model => model.Publisher, new { style = "width:400px" })
+                                                                            @Html.ValidationMessageFor(model => model.Publisher)
+                                                                        </td>
+                                                                    </tr>
+                                                                        <tr>
+                                                                            <td align="left" class="text4">@Html.LabelFor(model => model.Author)</td>
+                                                                            <td align="left">
+                                                                                @Html.TextBoxFor(model => model.Author, new { style = "width:400px" })
+                                                                                @Html.ValidationMessageFor(model => model.Author)
+                                                                            </td>
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <td align="left" class="text4">@Html.LabelFor(model => model.Edition)</td>
+                                                                            <td align="left">
+                                                                                @Html.DropDownListFor(model => model.Edition, ViewData["editionList"] as SelectList)
+                                                                                @Html.ValidationMessageFor(model => model.Edition)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left" class="text4">@Html.LabelFor(model => model.Category)</td>
+                                                                            <td align="left">
+                                                                                @Html.DropDownListFor(model => model.Category, ViewData["bookCategory"] as SelectList)
+                                                                                @Html.ValidationMessageFor(model => model.Category)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left" class="text4">@Html.LabelFor(model => model.Year)</td>
+                                                                            <td align="left">
+                                                                                @Html.TextBoxFor(model => model.Year, new { style = "width:400px" })
+                                                                                @Html.ValidationMessageFor(model => model.Year)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left" class="text4">@Html.LabelFor(model => model.Locality)</td>
+                                                                            <td align="left">
+                                                                                @Html.TextBoxFor(model => model.Locality, new { style = "width:400px" })
+                                                                                @Html.ValidationMessageFor(model => model.Locality)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left" class="text4">@Html.LabelFor(model => model.City)</td>
+                                                                            <td align="left">
+                                                                                @Html.TextBoxFor(model => model.City, new { style = "width:400px" })
+                                                                                @Html.ValidationMessageFor(model => model.City)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left" class="text4">@Html.LabelFor(model => model.Price)</td>
+                                                                            <td align="left">
+                                                                                @Html.TextBoxFor(model => model.Price, new { style = "width:400px" })
+                                                                                @Html.ValidationMessageFor(model => model.Price)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr></tr>
+                                                                        <tr>
+                                                                            <td align="center" colspan="2">
+                                                                                <input type="submit" value="Save" style="background-color:#1c2641;color:#ffffff; border:none; padding:4px 15px;font-family:Arial, Helvetica, sans-serif; font-size:11px;text-decoration:none;cursor:pointer;" />
+                                                                                @Html.ActionLink("Cancel", "MyAccount", "Account", new { BookID = Model.BookID }, new { @style = "background-color:#1c2641;color:#ffffff; border:none; padding:4px 15px;font-family:Arial, Helvetica, sans-serif; font-size:11px;text-decoration:none;cursor:pointer;" })
+                                                                            </td>
+                                                                            <td align="left"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td></td>
+                                                                            <td align="left" class="text5"></td>
+                                                                        </tr>
+                                                                    }
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="heading2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td align="center">@Html.Partial("_Footer")</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+
+</body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/jquery.validate.min.js")
+@Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")

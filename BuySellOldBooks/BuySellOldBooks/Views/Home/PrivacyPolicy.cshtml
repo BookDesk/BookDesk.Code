@@ -1,0 +1,133 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - BookDesk.in</title>
+    <link href="~/Content/CustomStylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="body">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center">
+                <table width="73%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="29%" height="85" valign="bottom" align="left" style="padding-bottom: 5px;">
+                                        <a href="@Url.Action("SearchBooks","Book")"><img src="~/images/logo.png" width="256" height="64" style="border:none"/></a></td>
+                                    <td width="71%" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="73%" align="right" valign="top">@Html.Partial("_LoginPartial")</td>
+                                                <td width="27%" align="right">
+                                                    <a href="@Url.Action("SearchBooks", "Book", new { SpecialStatus="1"})"><img src="~/images/top.png" width="162" height="76" style="border:none" /></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="heading4" align="left">Privacy Policy</td>
+                                    <td colspan="2" valign="top">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" valign="top" align="center">
+                                        <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td bgcolor="#ffffff" align="center">
+                                                    <table width="98%" border="0" cellspacing="5" cellpadding="5">
+                                                        <tr>
+                                                            <td align="left" class="text4">
+                                                                We value the trust you place in BookDesk.in. That's why we insist upon the highest standards for secure transactions and customer information privacy. Please read the following statement to learn about our information gathering and dissemination practices. Note: Our privacy policy is subject to change at any time without notice. To make sure you are aware of any changes, please review this policy periodically.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">1. Collection of Personally Identifiable Information</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">We collect personally identifiable information (email address, name, phone number, etc.) from you when you set up a free account with BookDesk.in. While you can browse some sections of our site without being a registered member, certain activities (such as selling a book) do require registration.
+
+<br />We do use your contact information to send you offers based on your previous orders and your interests.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">2. Use of Demographic and Profile Data</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">We use personal information to provide the services you request. To the extent we use your personal information to market to you, we will provide you the ability to opt-out of such uses. We use your personal information to resolve disputes; troubleshoot problems; help promote a safe service; collect fees owed; measure consumer interest in our products and services, inform you about online and offline offers, products, services, and updates; customize your experience; detect and protect us against error, fraud and other criminal activity; enforce our terms and conditions; and as otherwise described to you at the time of collection.
+
+<br />In our efforts to continually improve our product and service offerings, we collect and analyse demographic and profile data about our users' activity on our website.
+
+<br />We identify and use your IP address to help diagnose problems with our server, and to administer our website. Your IP address is also used to help identify you and to gather broad demographic information.
+
+<br />We will occasionally ask you to complete optional online surveys. These surveys may ask you for contact information and demographic information (like zip code, age, or income level). We use this data to tailor your experience at our site, providing you with content that we think you might be interested in--and to display content according to your preferences.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">Cookies</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">3. Sharing of personal information</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">We may share personal information with our other corporate entities and affiliates to: help detect and prevent identity theft, fraud and other potentially illegal acts; correlate related or multiple accounts to prevent abuse of our services; and to facilitate joint or co-branded services that you request where such services are provided by more than one corporate entity. Those entities and affiliates may not market to you as a result of such sharing unless you explicitly opt-in.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">We may disclose personal information if required to do so by law or in the good faith belief that such disclosure is reasonably necessary to respond to subpoenas, court orders, or other legal process. We may disclose personal information to law enforcement offices, third party rights owners, or others in the good faith belief that such disclosure is reasonably necessary to: enforce our Terms or Privacy Policy; respond to claims that an advertisement, posting or other content violates the rights of a third party; or protect the rights, property or personal safety of our users or the general public.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">BookDesk.in and its affiliates will share some or all of your personal information with another business entity should we (or our assets) plan to merge with, or be acquired by that business entity. Should such a transaction occur, that other business entity (or the new combined entity) will be required to follow this privacy policy with respect to your personal information.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">4. Links to Other Sites</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">Our site links to other websites that may collect personally identifiable information about you. BookDesk.in is not responsible for the privacy practices or the content of those linked websites.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">5. Security Precautions</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">Our site has stringent security measures in place to protect the loss, misuse, and alteration of the information under our control. Whenever you change or access your account information, we offer the use of a secure server. Once your information is in our possession we adhere to strict security guidelines, protecting it against unauthorized access.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text5" align="left">6. Questions? </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">Questions regarding this policy should be directed to the following address: contact@BookDesk.in</td>
+                                                        </tr>
+
+                                                        <tr><td></td></tr>
+                                                       
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="heading2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">@Html.Partial("_Footer")</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+        </body>
+</html>

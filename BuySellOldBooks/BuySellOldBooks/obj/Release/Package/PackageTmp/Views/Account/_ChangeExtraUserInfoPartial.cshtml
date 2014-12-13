@@ -1,0 +1,45 @@
+﻿@model BuySellOldBooks.Models.User
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("ChangeExtraUserInfoPartial", "Account"))
+{
+    @Html.AntiForgeryToken()
+
+    <table width="70%"  cellpadding="5" cellspacing="0" >
+        @Html.HiddenFor(m => m.UserId, new { @class = "text_field_other" })
+        <tr>
+            <td align="left" class="text4" width="40%">@Html.LabelFor(m => m.Email):&nbsp;
+                <label style="color: #C71F21; text-align: left;"><b>*</b></label></td>
+            <td align="left"  width="60%">@Html.TextBoxFor(m => m.Email, null, new { @class = "text_field_other" })
+                @Html.ValidationMessageFor(m => m.Email, null, new { @class = "validationMsgTextStyle" })
+            </td>
+        </tr>
+        <tr>
+            <td align="left" class="text4"  width="40%">@Html.LabelFor(m => m.Phone):</td>
+            <td align="left"  width="60%">@Html.TextBoxFor(m => m.Phone, null, new { @class = "text_field_other" })
+                @Html.ValidationMessageFor(m => m.Phone, null, new { @class = "validationMsgTextStyle" })
+            </td>
+        </tr>
+        <tr>
+            <td align="left" class="text4"  width="40%">@Html.LabelFor(m => m.NickName):&nbsp;
+                <label style="color: #C71F21; text-align: left;"><b>*</b></label></td>
+            <td align="left"  width="60%">@Html.TextBoxFor(m => m.NickName, null, new { @class = "text_field_other" })
+                @Html.ValidationMessageFor(m => m.NickName, null, new { @class = "validationMsgTextStyle" })
+            </td>
+        </tr>
+        <tr>
+            <td align="left" class="text4"  width="40%">@Html.LabelFor(m => m.Institution):</td>
+            <td align="left"  width="60%">@Html.TextBoxFor(m => m.Institution, null, new { @class = "text_field_other" })
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left"  width="40%">&nbsp;</td>
+            <td align="left"  width="60%">
+                <input type="submit" value="Change Profile Information" style="background-color: #1c2641; color: #ffffff; border: none; padding: 4px 15px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; text-decoration: none; cursor: pointer;" />
+            </td>
+
+    </table>
+}

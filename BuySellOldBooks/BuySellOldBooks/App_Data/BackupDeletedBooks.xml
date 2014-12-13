@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Books>
+  <Book Date="2014-07-17T11:11:29.9614876+05:30">
+    <BookID>433</BookID>
+    <UserId>10</UserId>
+    <Title>BaqTitle</Title>
+    <Author>BaqAuthor</Author>
+    <Edition>5</Edition>
+    <Category>Engineering</Category>
+    <Locality>Tilak Nagar</Locality>
+    <City>Agra</City>
+    <State></State>
+    <Price>876</Price>
+    <Review></Review>
+    <IsActive>False</IsActive>
+    <EntryDateTime>16-Jul-14 1:44:16 AM</EntryDateTime>
+  </Book>
+  <Book Date="2014-07-17T11:41:23.2119111+05:30">
+    <BookID>433</BookID>
+    <UserId>10</UserId>
+    <Title>BaqTitle</Title>
+    <Author>BaqAuthor</Author>
+    <Edition>5</Edition>
+    <Category>Engineering</Category>
+    <Locality>Tilak Nagar</Locality>
+    <City>Agra</City>
+    <State></State>
+    <Price>876</Price>
+    <Review></Review>
+    <IsActive>False</IsActive>
+    <EntryDateTime>16-Jul-14 1:44:16 AM</EntryDateTime>
+  </Book>
+</Books>

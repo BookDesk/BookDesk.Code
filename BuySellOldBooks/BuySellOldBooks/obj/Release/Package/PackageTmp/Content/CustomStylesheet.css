@@ -1,0 +1,51 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#body{ margin:0px; padding:0px;  background-image:url(../Images/bg.jpg); background-repeat:repeat;}
+
+.top_links { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff;text-decoration:none;}
+.top_links a{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff; padding:5px; text-decoration:none;padding-top:10px;}
+
+.top_links1 { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#1d2641;text-decoration:none;font-weight:bold;}
+.top_links1 a{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#1d2641; padding:5px; text-decoration:none;padding-top:10px;font-weight:bold;}
+
+.heading1{ background-color:#c71f21; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-transform:uppercase; font-weight:bold; padding:14px; color:#ffffff; background-image:url(~/images/link_bg.jpg); background-repeat:repeat-x;}
+.heading2{ background-color:#c71f21; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-transform:uppercase; font-weight:bold; padding:5px 14px; color:#ffffff;}
+.heading3{ background-color:#c71f21; font-family:Arial, Helvetica, sans-serif; font-size:12px;  padding:14px; color:#ffffff; }
+.heading4{ background-color:#c71f21; font-family:Arial, Helvetica, sans-serif; font-size:24px;  padding:5px 14px; color:#ffffff; font-weight:bold;}
+h2 { color:#c51d20; margin:0px;padding:0px;}
+
+.list{ list-style:none; margin:3px 0px; padding:0px;padding-left:15px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#444444; line-height:20px; text-decoration:none;}
+.list a{ text-decoration:none;color:#444444; padding:0px; margin:0px; margin-left:3px;}
+
+.text1{ font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#c51d20;}
+.text2{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#222222;}
+.text3{ padding-left:10px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#222222; font-weight:bold;}
+.text4{ padding-left:5px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000;}
+.text5{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#c51d20;}
+.text6{ font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#c51d20;}
+
+.price{ font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#ff0000;}
+.main_link{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff; padding:0px 15px; text-decoration:none;}
+.right_border {border-right:1px solid #cccccc;}
+
+.button1{ background-color:#1c2641;color:#ffffff; border:none; padding:10px 25px;font-family:Arial, Helvetica, sans-serif; font-size:11px;}
+.buttonContact{ background-color:#1c2641;color:#ffffff; border:none; padding:4px 15px;font-family:Arial, Helvetica, sans-serif; font-size:11px;text-decoration:none;cursor:pointer;}
+.filterButton{ background-color:#1c2641;color:#ffffff; border:none; padding:7px 25px;font-family:Arial, Helvetica, sans-serif; font-size:11px;}
+
+.link_button1 a{ background-color:#1c2641;color:#ffffff; border:none; padding:10px 25px;font-family:Arial, Helvetica, sans-serif; font-size:11px;}
+
+.text_field{width:365px;font-family:Arial, Helvetica, sans-serif;padding:5px;border:none; padding-left:10px; color:#555555;}
+.text_field_other{width:200px;font-family:Arial, Helvetica, sans-serif;padding:5px;border:1px solid #cccccc; padding-left:10px; color:#555555;}
+
+.ValidationSummaryMsgs{font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#c51d20;}
+
+.select_field {width:120px;font-family:Arial, Helvetica, sans-serif;padding:4px;border:none;color:#555555;}
+
+.text_MessageBody{width:400px;height:150px;font-family:Arial, Helvetica, sans-serif;font-size:5px;}
+.text_MessageTo{width:400px;font-family:Arial, Helvetica, sans-serif;font-size:5px;}
+.text_MessageSubject{width:400px;font-family:Arial, Helvetica, sans-serif;font-size:5px;}
+
+.validationMsgTextStyle {font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#c51d20;}
+
+.link_button2{color:#1c2641; border:none;font-family:Arial, Helvetica, sans-serif; font-size:12px; text-decoration:none;}

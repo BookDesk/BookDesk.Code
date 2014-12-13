@@ -1,0 +1,106 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - BookDesk.in</title>
+    <link href="~/Content/CustomStylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="body">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center">
+                <table width="73%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="29%" height="85" valign="bottom" align="left" style="padding-bottom: 5px;">
+                                        <a href="@Url.Action("SearchBooks","Book")"><img src="~/images/logo.png" width="256" height="64" style="border:none"/></a></td>
+                                    <td width="71%" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="73%" align="right" valign="top">@Html.Partial("_LoginPartial")</td>
+                                                <td width="27%" align="right">
+                                                    <a href="@Url.Action("SearchBooks", "Book", new { SpecialStatus="1"})"><img src="~/images/top.png" width="162" height="76" style="border:none" /></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="heading4" align="left">About Us</td>
+                                    <td colspan="2" valign="top">&nbsp;</td>
+                                </tr>
+                                <tr>
+
+                                    <td width="100%" valign="top" align="center">
+                                        <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td bgcolor="#ffffff" align="center">
+                                                    <table width="98%" border="0" cellspacing="5" cellpadding="5">
+                                                        <tr><td></td></tr>
+                                                        <tr>
+                                                            <td class="text4" align="left"><b>Hello! Greetings from The BookDesk.in Team!</b></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">Buy-Sell Old Books is an online program from <b>BookDesk.in</b>  that allows you to buy-sell used Book(s), We do not charge any fee from Seller as well as from Buyer.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">This platform is an online solution for sale and purchase of old books. We work by and believe in the motto - <i>"Knowledge is never old"</i>.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">We have designed a hassle-free platform for our users where they can upload their old books for selling to a large number of customers. At the same time, we provide a convenient market place to our customers for purchasing used books at reasonable prices.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left"><b>For Sellers:</b> Sellers love BookDesk.in as they get access to a large customer base and are able to sell their old books at reasonable prices. We do not charge any fee from our sellers and they can sell as many books as they like!</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left"><b>For Buyers:</b> We provide a host of benefits to the buyers which include a large number of books of different categories and from different sectors/streams where a buyer can directly contact to the seller and make a best deal for them.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">Thus, BookDesk.in provides a great platform to both the buyers and the sellers.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">When you buy used college books from the store you know they cost way too much! and to add insult to injury when you go to sell back college books to the bookstore they want to offer you mere price for your college textbooks.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">Well now you do not have to take this abuse. Sell textbooks to Sell Back Your Book to make sure you get the most for your college textbooks.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text4" align="left">Sell textbooks, get paid, it’s just that simple! Did you know that if you wait to sell textbooks until next semester then they may be worthless? 
+                                                                Publishers frequently publish new editions of textbooks and when your book becomes the 'old edition' it loses a lot of value. Do not let this happen to you, sell textbooks today!
+                                                                In general, the books you wish to sell must be in at least good condition.
+                                                            </td>
+                                                        </tr>
+                                                        <tr><td></td></tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="heading2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">@Html.Partial("_Footer")</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+        </body>
+</html>

@@ -1,0 +1,48 @@
+﻿@if (Request.IsAuthenticated) {  
+<text>
+<!-- Codes by HTML.am -->
+<table>
+    <tr >
+        <td class="top_links1">@using (Html.BeginForm("SearchBooks", "Book", FormMethod.Get, new { id = "home", title="Go to Home Page" })) {
+            @Html.AntiForgeryToken()
+            <a  href="javascript:document.getElementById('home').submit()">Home</a>}
+        </td>
+        <td class="top_links">|</td>
+        <td class="top_links1">@using (Html.BeginForm("AddBooks", "Book", FormMethod.Get, new { id = "addNewBookForm", title="Upload books to sell" })) {
+            @Html.AntiForgeryToken()
+            <a  href="javascript:document.getElementById('addNewBookForm').submit()">Add book(s) to sell</a>}
+        </td>
+        <td class="top_links">|</td>
+        <td class="top_links1">@using (Html.BeginForm("MyAccount", "Account", FormMethod.Get, new { id = "myaccount", title="View the list of books uploaded by you, also you can edit or delete a book from there" })) {
+            @Html.AntiForgeryToken()
+            <a  href="javascript:document.getElementById('myaccount').submit()">My Account</a>}
+        </td>
+        <td class="top_links">|</td>
+        <td style="font-family:Arial, Helvetica, sans-serif;color:white;font-size:small" class="top_links1">
+            Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Change or Update profile info or password here" })!
+        </td>
+        <td class="top_links">|</td>
+        <td class="top_links1">
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", title="Sign out" })) {
+            @Html.AntiForgeryToken()
+            <a  href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
+        }
+        </td>
+    </tr>
+</table>
+</text>
+ 
+} else {
+    <table>
+        <tr>
+            <td class="top_links1">@using (Html.BeginForm("SearchBooks", "Book", FormMethod.Get, new { id = "home" })) {
+            @Html.AntiForgeryToken()
+            <a  href="javascript:document.getElementById('home').submit()">Home</a>}
+           </td>
+            <td class="top_links">|</td>
+            <td class="top_links1" valign="top">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</td>
+            <td class="top_links">|</td>
+            <td class="top_links1">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</td>
+        </tr>
+    </table>
+}

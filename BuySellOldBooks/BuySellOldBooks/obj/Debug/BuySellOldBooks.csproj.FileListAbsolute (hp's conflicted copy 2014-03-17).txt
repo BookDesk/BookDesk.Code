@@ -1,0 +1,4 @@
+C:\Users\pallavi\Dropbox\PustakKosh.in\Application\BuySellOldBooks\BuySellOldBooks\obj\Debug\BuySellOldBooks.csprojResolveAssemblyReference.cache
+C:\Users\pallavi\Dropbox\PustakKosh.in\Application\BuySellOldBooks\BuySellOldBooks\obj\Debug\BuySellOldBooks.csproj.GenerateResource.Cache
+C:\Users\pallavi\Dropbox\PustakKosh.in\Application\BuySellOldBooks\BuySellOldBooks\obj\Debug\BuySellOldBooks.dll
+C:\Users\pallavi\Dropbox\PustakKosh.in\Application\BuySellOldBooks\BuySellOldBooks\obj\Debug\BuySellOldBooks.pdb

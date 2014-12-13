@@ -1,0 +1,125 @@
+﻿@*model BuySellOldBooks.Models.LoginModel*@
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - BookDesk.in</title>
+    <link href="~/Content/CustomStylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+@using (Html.BeginForm()) {
+<body id="body">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center">
+                <table width="73%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="29%" height="85" valign="bottom" align="left" style="padding-bottom: 5px;">
+                                        <a href="@Url.Action("SearchBooks","Book")"><img src="~/images/logo.png" width="256" height="64" style="border:none"/></a></td>
+                                    <td width="71%" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="73%" align="right" valign="top">@Html.Partial("_LoginPartial")</td>
+                                                <td width="27%" align="right">
+                                                    <a href="@Url.Action("Specials","Home")"><img src="~/images/top.png" width="162" height="76" style="border:none"/></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="heading4" align="left">Contact Us</td>
+                                    <td colspan="2" valign="top">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" valign="top" align="center">
+                                        <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td bgcolor="#ffffff" align="left">
+                                                    <table width="99%" border="0" cellspacing="5" cellpadding="5">
+                                                        <tr>
+                                                            <td>
+                                                                <tr>
+                                                                    <td>
+                                                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                                                            <tr>
+                                                                                <td align="center" class="text4"><b>We're always glad to hear from you!</b></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" class="text4">You can share your compliments, comments, suggestions, complaints from here.</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center">
+                                                                                    <table width="80%" cellspacing="0" cellpadding="0">
+                                                                                        <tr>
+                                                                                            <td valign="top" width="50%">
+                                                                                                <table width="100%" cellspacing="5" cellpadding="5">
+                                                                                                    <tr>
+                                                                                                        <td class="text4"><label>Type your Name here <b title="required field">*</b></label> @Html.TextBox("name","",new {type = "text", required = "required", maxlength = 50,style = "width:400px", title="Please enter your Name.", onblur="if( value=='') value = ''", onfocus="if(value=='Name') value = ''"})</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td class="text4">Type your Phone Number here  @Html.TextBox("phoneNumber","",new {type = "text", maxlength = 12,style = "width:400px", title="Please enter your Phone Number.", onblur="if( value=='') value = ''", onfocus="if(value=='Phone Number') value = ''"})</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td class="text4">Type your E-Mail here <b title="required field">*</b> @Html.TextBox("email","",new {type = "email", required = "required", maxlength = 50,style = "width:400px", title="Please enter your E-Mail Address.", onblur="if( value=='') value = ''", onfocus="if(value=='E-Mail') value = ''"})</td>
+                                                                                                    </tr>
+                                                                                                    <tr align="left">
+                                                                                                        <td><input type="submit" value="SUBMIT" style="background-color:#1c2641;color:#ffffff; border:none; padding:4px 15px;font-family:Arial, Helvetica, sans-serif; font-size:11px;text-decoration:none;cursor:pointer;"/></td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                            <td valign="top" width="50%"><table width="100%" cellspacing="5" cellpadding="5">
+                                                                                                    <tr>
+                                                                                                        <td class="text4">Type Message here <b title="required field">*</b> @Html.TextArea("message","",new {type = "text", required = "required", maxlength = 300, style = "width:400px;height:125px", title="Please enter Message.", onblur="if( value=='') value = ''", onfocus="if(value=='Message') value = ''"})</td>
+                                                                                                    </tr>
+                                                                                                   
+                                                                                                </table></td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+
+                                                                </tr>
+                                                            </td>
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="heading2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">@Html.Partial("_Footer")</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+
+</body>
+}
+</html>
