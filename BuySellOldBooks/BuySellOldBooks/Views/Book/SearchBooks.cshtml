@@ -68,7 +68,7 @@
                                             <tr>
                                                 @if (ViewBag.SpecialStatus == "1")
                                                 {
-                                                    <td> <img src="~/Images/special-offer-icon.jpg" /></td>
+                                                    <td> <img src="~/Images/special-offer-icon.png" /></td>
                                                     <td align="left" class="text1" width="80%" style="color:#0262AC" onmouseover="show('/images/BookImages/'+@item.State+'.jpg')" onmouseout="toolTip()">@Html.Encode(Html.DisplayFor(modelItem => item.Title))</td>
                                                     <td class="price" width="20%" valign="top">For Sale:  @Html.Encode(Html.DisplayFor(modelItem => item.Price)) </td>
                                                 }
@@ -76,7 +76,7 @@
                                                 {
                                                     if (item.EntryDateTime.Month == DateTime.Now.Month)
                                                     {
-                                                        <td> <img src="~/Images/justArrived1.jpg" /></td>
+                                                        <td> <img src="~/Images/justArrived1.png" /></td>
                                                     }
                                                     else
                                                     {

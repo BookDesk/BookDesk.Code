@@ -250,7 +250,14 @@ namespace BuySellOldBooks.Controllers
                 {
                     TempData["changePersonalInfoSucceededFlag"] = "0";
                     //ChangeExtraUserInfoPartial info do not update entry date time (but is should nt because user is just updating the information).
-                    user.EntryDateTime = DateTime.Now;
+                    //TRELLO
+                    if (user.EntryDateTime==null)
+                    {
+                        user.EntryDateTime = user.EntryDateTime;
+                    }
+
+                    //user.EntryDateTime = DateTime.Now;
+                    user.ModifiedDateTime = DateTime.Now;
                     user.IsActive = true;
                     //when the context went to save the data, it could not find an ID = 0. Be sure to place a break point in your update statement and verify that the entity's ID has been set.
                     //http://stackoverflow.com/questions/1836173/entity-framework-store-update-insert-or-delete-statement-affected-an-unexpec

@@ -31,7 +31,10 @@ namespace BuySellOldBooks.Models
         public string   Email { get; set; }
         public string   Institution { get; set; }
         public bool     IsActive { get; set; }
-        public DateTime EntryDateTime { get; set; }
+        public DateTime? EntryDateTime { get; set; }
+
+        //TRELLO
+        public DateTime? ModifiedDateTime { get; set; }
 
         /// <summary>
         /// The Books property is a navigation property. Navigation properties hold other entities that are rel ated to this entity. 
