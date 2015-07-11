@@ -10,6 +10,7 @@ using System.Web.Mail;
 using System.Web.Mvc;
 using PagedList;
 
+//for baq 11 july
 namespace BuySellOldBooks.Controllers
 {
     public class HomeController : Controller

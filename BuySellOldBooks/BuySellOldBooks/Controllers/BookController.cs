@@ -13,12 +13,13 @@ using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 
+//Added this line on 11july for baq.  .
 namespace BuySellOldBooks.Controllers
 {
     public class BookController : Controller
     {
         private PustakContext db = new PustakContext();
-        //Window edit 5 
+        //Window edit 5
         //TEST EDIT on 12-Dec 1:42
         //Web Edit2
         //Web edit4
@@ -135,8 +136,7 @@ namespace BuySellOldBooks.Controllers
             , HttpPostedFileBase file9, HttpPostedFileBase file10)
         {
             //Check for bogus inputs from user
-            string[] chkForBougsInput = { "fuck", "asshole", "felch", "skullfuck", "blumpkin", "cum dumpster", "rusty trombone", "cleveland steamer", "glass bottom boat",
-                                        "eat fur pie", "fuck hole", "amul baby Cock", "meat flap", "dick", "cum freak", "nut butter"};
+            string[] chkForBougsInput = { "Some Bad Word", "Bogus word"};
 
             if (book[0].Title == null || book[0].Author == null || book[0].Category == null || book[0].Price == 0 || cities == "" || book[0].Locality == null || book[0].Publisher == null || book[0].Year == null
                 || chkForBougsInput.Contains(book[0].Title.ToLower()) || chkForBougsInput.Contains(book[0].Author.ToLower()) || chkForBougsInput.Contains(book[0].Locality.ToLower())

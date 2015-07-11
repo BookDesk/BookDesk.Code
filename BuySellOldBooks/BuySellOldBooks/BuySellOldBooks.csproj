@@ -231,6 +231,18 @@
     <Compile Include="Migrations\201412130805081_updateRegForNickName.Designer.cs">
       <DependentUpon>201412130805081_updateRegForNickName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505110601064_updtUsertblmodifydt.cs" />
+    <Compile Include="Migrations\201505110601064_updtUsertblmodifydt.Designer.cs">
+      <DependentUpon>201505110601064_updtUsertblmodifydt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505110633473_UpdatUserTblModifDateProp.cs" />
+    <Compile Include="Migrations\201505110633473_UpdatUserTblModifDateProp.Designer.cs">
+      <DependentUpon>201505110633473_UpdatUserTblModifDateProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505110650076_updtEntrydt.cs" />
+    <Compile Include="Migrations\201505110650076_updtEntrydt.Designer.cs">
+      <DependentUpon>201505110650076_updtEntrydt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -312,10 +324,11 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Images\justArrived1.jpg" />
-    <Content Include="Images\justArrived2.jpg" />
-    <Content Include="Images\justArrived3.jpg" />
-    <Content Include="Images\special-offer-icon.jpg" />
+    <Content Include="Images\justArrived1.png" />
+    <Content Include="Images\special-offer-icon.png" />
+    <Content Include="Images\temp_justArrived1.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\temp_special-offer-icon.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -331,7 +344,7 @@
     <Content Include="Images\images.jpg" />
     <Content Include="Images\tw.png" />
     <Content Include="Images\bg.jpg" />
-    <Content Include="Images\logo.png" />
+    <Content Include="Images\_logo.png" />
     <Content Include="Images\link_bg.jpg" />
     <Content Include="Images\link_bg_small.jpg" />
     <Content Include="Images\logo.jpg" />
@@ -442,6 +455,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412130805081_updateRegForNickName.resx">
       <DependentUpon>201412130805081_updateRegForNickName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505110601064_updtUsertblmodifydt.resx">
+      <DependentUpon>201505110601064_updtUsertblmodifydt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505110633473_UpdatUserTblModifDateProp.resx">
+      <DependentUpon>201505110633473_UpdatUserTblModifDateProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505110650076_updtEntrydt.resx">
+      <DependentUpon>201505110650076_updtEntrydt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
