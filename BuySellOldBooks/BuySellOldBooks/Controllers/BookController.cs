@@ -13,6 +13,7 @@ using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 
+//Added this line on 11july for baq.  .
 namespace BuySellOldBooks.Controllers
 {
     public class BookController : Controller
